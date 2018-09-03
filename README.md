@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/IT2810/it2810-webutvikling-h18-prosjekt-2-gruppe--39.svg?token=g9qzy3iZKonPS7TyrGNU&branch=dev)](https://travis-ci.com/IT2810/it2810-webutvikling-h18-prosjekt-2-gruppe--39)
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
