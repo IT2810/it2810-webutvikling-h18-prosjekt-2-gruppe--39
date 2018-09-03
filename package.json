@@ -5,7 +5,7 @@
   "dependencies": {
     "husky": "^0.14.3",
     "lint-staged": "^7.2.2",
-    "prettier": "^1.14.2",
+    "prettier": "1.14.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-scripts": "1.1.5"
@@ -13,6 +13,7 @@
   "lint-staged": {
     "src/**/*.{js,jsx,json,css}": [
       "prettier --single-quote --write",
+      "pretty-quick --staged",
       "git add"
     ]
   },
@@ -22,6 +23,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "pretty-quick": "^1.6.0"
   }
 }
-
