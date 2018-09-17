@@ -12,7 +12,7 @@ const types = {
 function Checkbox(props) {
   return (
     <label>
-      {props.kategori}
+      {props.category}
       <input onClick={props.onClick} type="checkbox" />
     </label>
   );
@@ -22,26 +22,38 @@ class Sidebar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      dikt: {
+      poems: {
         classic: false,
         funny: false,
         theworst: false,
         erotic: false
       },
-      lyd: {
+      sound: {
         kategori_1: false,
         kategori_2: false,
         kategori_3: false
       },
-      bilde: {
+      image: {
         kategori_1: false,
         kategori_2: false,
         kategori_3: false
-      },
-      isMenuOpen: false,
-      isLoaded: false,
-      items: []
+      }
     };
+  }
+
+  renderCheckboxes(type, categories) {
+    let checkboxes = [];
+    categories.forEach((c, i) => {
+      checkboxes.push(
+        <li key={i}>
+          <Checkbox
+            category={categories[i]}
+            onClick={() => this.handleCheckboxClick(type, categories[i])}
+          />
+        </li>
+      );
+    });
+    return checkboxes;
   }
 
   render() {
@@ -53,72 +65,20 @@ class Sidebar extends React.Component {
           </a>
           <ul className="sidebar-element">
             Dikt
-            <li>
-              <Checkbox
-                kategori="Kategori 1"
-                onClick={() => this.handleCheckboxClick('dikt', 'classic')}
-              />
-            </li>
-            <li>
-              <Checkbox
-                kategori="Kategori 2"
-                onClick={() => this.handleCheckboxClick('dikt', 'funny')}
-              />
-            </li>
-            <li>
-              <Checkbox
-                kategori="Kategori 3"
-                onClick={() => this.handleCheckboxClick('dikt', 'theworst')}
-              />
-            </li>
-            <li>
-              <Checkbox
-                kategori="Kategori 4"
-                onClick={() => this.handleCheckboxClick('dikt', 'erotic')}
-              />
-            </li>
+            {this.renderCheckboxes('poems', [
+              'classic',
+              'funny',
+              'theworst',
+              'erotic'
+            ])}
           </ul>
           <ul className="sidebar-element">
             Lyd
-            <li>
-              <Checkbox
-                kategori="Kategori 1"
-                onClick={() => this.handleCheckboxClick('lyd', 'kategori_1')}
-              />
-            </li>
-            <li>
-              <Checkbox
-                kategori="Kategori 2"
-                onClick={() => this.handleCheckboxClick('lyd', 'kategori_2')}
-              />
-            </li>
-            <li>
-              <Checkbox
-                kategori="Kategori 3"
-                onClick={() => this.handleCheckboxClick('lyd', 'kategori_3')}
-              />
-            </li>
+            {this.renderCheckboxes('sound', ['c1', 'c2', 'c3', 'c4'])}
           </ul>
           <ul className="sidebar-element">
             Bilde
-            <li>
-              <Checkbox
-                kategori="Kategori 1"
-                onClick={() => this.handleCheckboxClick('bilde', 'kategori_1')}
-              />
-            </li>
-            <li>
-              <Checkbox
-                kategori="Kategori 2"
-                onClick={() => this.handleCheckboxClick('bilde', 'kategori_2')}
-              />
-            </li>
-            <li>
-              <Checkbox
-                kategori="Kategori 3"
-                onClick={() => this.handleCheckboxClick('bilde', 'kategori_3')}
-              />
-            </li>
+            {this.renderCheckboxes('image', ['c1', 'c2', 'c3', 'c4'])}
           </ul>
         </div>
       </div>
@@ -130,28 +90,18 @@ class Sidebar extends React.Component {
     newState[type][kat] = !this.state[type][kat];
     this.setState(newState);
     switch (type) {
-      case 'dikt':
+      case 'poems':
         this.fetchPoems();
         break;
-      case 'bilde':
+      case 'image':
         this.fetchPhotos();
         break;
-      case 'lyd':
+      case 'sound':
         this.fetchSound();
         break;
       default:
         console.log('Nothing here');
     }
-  }
-
-  openSidebar() {
-    this.setState({ isMenuOpen: true });
-    // document.getElementById('sidebar').style.width = '250px';
-  }
-
-  closeSidebar() {
-    this.setState({ isMenuOpen: false });
-    // document.getElementById('sidebar').style.width = '0px';
   }
 
   fetchPhotos() {
@@ -160,13 +110,13 @@ class Sidebar extends React.Component {
 
   fetchSound() {
     // TODO: fetch sound
-    fetch('media/Sound/noice');
+    new Audio('media/Sound/blues/track_0.mp3').play();
   }
 
   fetchPoems() {
     const keys = [];
-    for (let key in this.state.dikt) {
-      if (this.state.dikt[key] === true) {
+    for (let key in this.state.poems) {
+      if (this.state.poems[key] === true) {
         keys.push(key);
       }
     }
