@@ -153,16 +153,14 @@ class Sidebar extends React.Component {
     // document.getElementById('sidebar').style.width = '0px';
   }
 
-  fetchPhotos() {} // TODO: fetch photos
+  fetchPhotos() {
+    // TODO: fetch photos
+  }
 
   fetchSound() {
-    const keys = [];
-    for (let key in this.state.dikt) {
-      if (this.state.dikt[key] === true) {
-        keys.push(key);
-      }
-    }
-  } // TODO: fetch sound
+    // TODO: fetch sound
+    fetch('media/Sound/noice');
+  }
 
   fetchPoems() {
     const keys = [];
