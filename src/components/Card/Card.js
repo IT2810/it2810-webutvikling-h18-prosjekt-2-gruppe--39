@@ -2,19 +2,17 @@ import React from 'react';
 import './Card.css';
 
 class Card extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+  // Todo: Make and use Card Class for use in Cards
 
   render() {
     return (
       <div className="card">
-        Kategori
+        <h3>Kategori: {this.props.category}</h3>
         <div className="container">
           <h4>
-            <b>John Doe</b>
+            <b>{this.props.title}</b>
           </h4>
-          <p>Architect & Engineer</p>
+          <p>{this.props.text}</p>
         </div>
       </div>
     );
@@ -22,13 +20,24 @@ class Card extends React.Component {
 }
 
 class Cards extends React.Component {
-  constructor(props) {
-    super(props);
+  /*
+* Container for multiple cards
+*/
+
+  renderPoems(poems) {
+    let cards = [];
+    poems.forEach((p, i) => {
+      cards.push(
+        <Card category={p.category} title={p.title} text={p.text} key={i} />
+      );
+    });
+    return cards;
   }
 
   render() {
-    console.log(this.props);
-    return <div />;
+    return (
+      <div className="card-wrapper">{this.renderPoems(this.props.content)}</div>
+    );
   }
 }
 

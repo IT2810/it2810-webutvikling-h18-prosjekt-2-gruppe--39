@@ -1,12 +1,6 @@
 import React from 'react';
 import './Sidebar.css';
 
-const types = {
-  dikt: ['klassikere', 'funny', 'theworst', 'erotic'],
-  lyd: ['bluse', 'classical', 'noice', 'meme'],
-  bilde: ['k1', 'k2', 'k3', 'k4']
-};
-
 function Checkbox(props) {
   return (
     <label>
@@ -21,7 +15,7 @@ class Sidebar extends React.Component {
     super(props);
     this.state = {
       dikt: {
-        klassikere: false,
+        classic: false,
         funny: false,
         theworst: false,
         erotic: false
@@ -55,7 +49,7 @@ class Sidebar extends React.Component {
             <li>
               <Checkbox
                 kategori="Kategori 1"
-                onClick={() => this.handleCheckboxClick('dikt', 'klassikere')}
+                onClick={() => this.handleCheckboxClick('dikt', 'classic')}
               />
             </li>
             <li>
@@ -130,15 +124,6 @@ class Sidebar extends React.Component {
     );
   }
 
-  renderPoems() {
-    let index = 1;
-    for (let key in this.state.items) {
-      for (let i = 0; i < Object.keys(this.state.items[key]).length; i++) {
-        //console.log(this.state.items[key][i]);
-      }
-    }
-  }
-
   handleCheckboxClick(type, kat) {
     const newState = this.state;
     newState[type][kat] = !this.state[type][kat];
@@ -190,8 +175,12 @@ class Sidebar extends React.Component {
       .then(res => res.json())
       .then(
         res => {
-          let newRes = {};
-          keys.forEach(k => (newRes[k] = res[k]));
+          let newRes = [];
+          for (const key in res) {
+            if (keys.indexOf(res[key]['category']) > -1) {
+              newRes.push(res[key]);
+            }
+          }
           this.props.loadData(newRes); // Calls props function from App.js
         },
         error => {

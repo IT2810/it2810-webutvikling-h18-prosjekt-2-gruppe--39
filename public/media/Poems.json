@@ -1,90 +1,98 @@
 {
-  "klassikere": {
-    "0": {
-      "tittel": "The Road Not Taken",
-      "forfatter": "Robert Frost",
-      "tekst": "Two roads diverged in a yellow wood,\nJb_modern_frost_2_eAnd sorry I could not travel both\nAnd be one traveler, long I stood\nAnd looked down one as far as I could\nTo where it bent in the undergrowth;\nThen took the other, as just as fair,\nAnd having perhaps the better claim,\nBecause it was grassy and wanted wear;\nThough as for that the passing there\nHad worn them really about the same,\n\nAnd both that morning equally lay\nIn leaves no step had trodden black.\nOh, I kept the first for another day!\nYet knowing how way leads on to way,\nI doubted if I should ever come back.\n\nI shall be telling this with a sigh\nSomewhere ages and ages hence:\nTwo roads diverged in a wood, and I—\nI took the one less traveled by,\nAnd that has made all the difference."
-    },
-    "1": {
-      "tittel": "Sonnet 18",
-      "forfatter": "William Shakespeare",
-      "tekst": "Shall I compare thee to a summer’s day?\n Thou art more lovely and more temperate:\n Rough winds do shake the darling buds of May,\n And summer’s lease hath all too short a date:\n Sometime too hot the eye of heaven shines,\n And often is his gold complexion dimm’d;\n And every fair from fair sometime declines,\n By chance, or nature’s changing course, untrimm’d;\n But thy eternal summer shall not fade\n Nor lose possession of that fair thou ow’st;\n Nor shall Death brag thou wander’st in his shade,\n When in eternal lines to time thou grow’st;\n So long as men can breathe or eyes can see,\n So long lives this, and this gives life to thee."
-    },
-    "2": {
-      "tittel": "Holy Sonnet 10: Death, Be Not Proud",
-      "forfatter": "John Donne",
-      "tekst": "Death, be not proud, though some have called thee\n Mighty and dreadful, for thou art not so;\n For those whom thou think’st thou dost overthrow\n Die not, poor Death, nor yet canst thou kill me.\n From rest and sleep, which but thy pictures be,\n Much pleasure; then from thee much more must flow,\n And soonest our best men with thee do go,\n Rest of their bones, and soul’s delivery.\n Thou art slave to fate, chance, kings, and desperate men,\n And dost with poison, war, and sickness dwell,\n And poppy or charms can make us sleep as well\n And better than thy stroke; why swell’st thou then?\n One short sleep past, we wake eternally\n And death shall be no more; Death, thou shalt die."
-    },
-    "3": {
-      "tittel": "On His Blindness",
-      "forfatter": "John Milton",
-      "tekst": "When I consider how my light is spent\n Ere half my days in this dark world and wide,\n And that one talent which is death to hide\n Lodg’d with me useless, though my soul more bent\n To serve therewith my Maker, and present\n My true account, lest he returning chide,\n “Doth God exact day-labour, light denied?”\n I fondly ask. But Patience, to prevent\n That murmur, soon replies: “God doth not need\n Either man’s work or his own gifts: who best\n Bear his mild yoke, they serve him best. His state\n Is kingly; thousands at his bidding speed\n And post o’er land and ocean without rest:\n They also serve who only stand and wait."
-    }
+  "0": {
+    "category": "classic",
+    "title": "The Road Not Taken",
+    "author": "Robert Frost",
+    "text": "Two roads diverged in a yellow wood,\nJb_modern_frost_2_eAnd sorry I could not travel both\nAnd be one traveler, long I stood\nAnd looked down one as far as I could\nTo where it bent in the undergrowth;\nThen took the other, as just as fair,\nAnd having perhaps the better claim,\nBecause it was grassy and wanted wear;\nThough as for that the passing there\nHad worn them really about the same,\n\nAnd both that morning equally lay\nIn leaves no step had trodden black.\nOh, I kept the first for another day!\nYet knowing how way leads on to way,\nI doubted if I should ever come back.\n\nI shall be telling this with a sigh\nSomewhere ages and ages hence:\nTwo roads diverged in a wood, and I—\nI took the one less traveled by,\nAnd that has made all the difference."
   },
-  "funny": {
-    "0": {
-      "tittel": "Doggy Heaven",
-      "forfatter": "Larry Huggins",
-      "tekst": "All doggies go to heaven (or so I've been told). \nThey run and play along the streets of Gold. \nWhy is heaven such a doggie-delight? \nWhy, because there's not a single cat in sight!"
-    },
-    "1": {
-      "tittel": "Horrendous Haiku",
-      "forfatter": "E.Gutierrez",
-      "tekst": "Creating Haiku\nIs harder than it appears\nThis may take a while."
-    },
-    "2": {
-      "tittel": "The Man In The Jar",
-      "forfatter": "Irwin Mercer",
-      "tekst": "I once knew a man who lived in a jar.\nFor a stranger sight you'd have to go far.\nI asked him once why he lived in a jar.\nHe grimaced and said, how bizarre you are.\n\nMy jar's so cozy, warm and bright,\nEven in the full moonlight.\nThe only drawback is, you see,\nGetting out quickly when I have to pee."
-    },
-    "3": {
-      "tittel": "Tinkle, Tinkle Little Car",
-      "forfatter": "Cecilia L. Goodbody",
-      "tekst": "Tinkle, Tinkle little car\nHow I wonder what you are.\n\nLeaking oil every day\nHaving it your own way.\n\nGoing up hills real slow\nI don't want you any mo'.\n\nTinkle, Tinkle little car\nBoy, what a lemon you are."
-    }
+  "1": {
+    "category": "classic",
+    "title": "Sonnet 18",
+    "author": "William Shakespeare",
+    "text": "Shall I compare thee to a summer’s day?\n Thou art more lovely and more temperate:\n Rough winds do shake the darling buds of May,\n And summer’s lease hath all too short a date:\n Sometime too hot the eye of heaven shines,\n And often is his gold complexion dimm’d;\n And every fair from fair sometime declines,\n By chance, or nature’s changing course, untrimm’d;\n But thy eternal summer shall not fade\n Nor lose possession of that fair thou ow’st;\n Nor shall Death brag thou wander’st in his shade,\n When in eternal lines to time thou grow’st;\n So long as men can breathe or eyes can see,\n So long lives this, and this gives life to thee."
   },
-  "theworst": {
-    "0": {
-      "tittel": "Organic Girl",
-      "forfatter": "Suzanne Somers",
-      "tekst": "Organic girl dropped by last night\nFor nothing in particular\nExcept to tell me again how beautiful and serene she feels\nOn uncooked vegetables and wheat germ fortified by bean sprouts\nMixed with yeast and egg whites on really big days\nShe not only meditates regularly, but looks at me like I should\nAnd lectures me about meat and ice cream\nAnd other aggressive foods I shouldn’t eat."
-    },
-    "1": {
-      "tittel": "Unicorn love mascot",
-      "forfatter": "Jennifer Aniston",
-      "tekst": "Lucky in love, lucky in love\nDidn’t forget me when I asked you to leave me\nDidn’t forget me\nNow you’re alongside me\nYou’ve brought luck to love\nI’ve been hit by a truck in love."
-    },
-    "2": {
-      "tittel": "A Peace of My Mind ",
-      "forfatter": "Charlie Sheen",
-      "tekst": "Teacher, teacher, I don’t understand\nYou tell me it’s like the back of my hand\nShould I play guitar and join the band?\nOr head to the beach and walk in the sand?"
-    },
-    "3": {
-      "tittel": "Musings From the Bed of Pamela",
-      "forfatter": "Pamela Anderson",
-      "tekst": "The youth… \nThe wild that rose up from the ashes. The adults… \nLiving and dead that fought for our rights… \nArtists… Sweet artists… \nHold on… \nCrazy, the world goes on… \nAnd goes…"
-    }
+  "2": {
+    "category": "classic",
+    "title": "Holy Sonnet 10: Death, Be Not Proud",
+    "author": "John Donne",
+    "text": "Death, be not proud, though some have called thee\n Mighty and dreadful, for thou art not so;\n For those whom thou think’st thou dost overthrow\n Die not, poor Death, nor yet canst thou kill me.\n From rest and sleep, which but thy pictures be,\n Much pleasure; then from thee much more must flow,\n And soonest our best men with thee do go,\n Rest of their bones, and soul’s delivery.\n Thou art slave to fate, chance, kings, and desperate men,\n And dost with poison, war, and sickness dwell,\n And poppy or charms can make us sleep as well\n And better than thy stroke; why swell’st thou then?\n One short sleep past, we wake eternally\n And death shall be no more; Death, thou shalt die."
   },
-  "erotic": {
-    "0": {
-      "tittel": "What Do Women Want?",
-      "forfatter": "Kim Addonizio",
-      "tekst": "I want a red dress.\nI want it flimsy and cheap,\nI want it too tight, I want to wear it \nuntil someone tears it off me.\nI want it sleeveless and backless,\nthis dress, so no one has to guess\nwhat's underneath. I want to walk down\nthe street past Thrifty's and the hardware store \nwith all those keys glittering in the window, \npast Mr. and Mrs. Wong selling day-old \ndonuts in their café, past the Guerra brothers \nslinging pigs from the truck and onto the dolly, \nhoisting the slick snouts over their shoulders. \nI want to walk like I'm the only\nwoman on earth and I can have my pick. \nI want that red dress bad.\nI want it to confirm\nyour worst fears about me,\nto show you how little I care about you \nor anything except what\nI want. When I find it, I'll pull that garment \nfrom its hanger like I'm choosing a body \nto carry me into this world, through \nthe birth-cries and the love-cries too, \nand I'll wear it like bones, like skin, \nit'll be the goddamned\ndress they bury me in."
-    },
-    "1": {
-      "tittel": "Servitude",
-      "forfatter": "Anne Reeve Aldrich",
-      "tekst": "The church was dim at vespers.\nMy eyes were on the Rood.\nBut yet I felt thee near me,\nIn every drop of blood.\n\nIn helpless, trembling bondage\nMy soul's weight lies on thee,\nO call me not at dead of night,\nLest I should come to thee!"
-    },
-    "2": {
-      "tittel": "O Hymen!",
-      "forfatter": "Walt Whitman",
-      "tekst": "O HYMEN! O hymenee!\nWhy do you tantalize me thus?\nO why sting me for a swift moment only?\nWhy can you not continue? O why do you now cease?\nIs it because, if you continued beyond the swift moment, you would soon certainly kill me?"
-    },
-    "3": {
-      "tittel": "Upon Julia's Clothes",
-      "forfatter": "Robert Herrick",
-      "tekst": "Whenas in silks my Julia goes,\nThen, then, methinks, how sweetly flows\nThe liquefaction of her clothes.\n\nNext, when I cast mine eyes and see\nThat brave vibration each way free,\nOh, how that glittering taketh me!"
-    }
+  "3": {
+    "category": "classic",
+    "title": "On His Blindness",
+    "author": "John Milton",
+    "text": "When I consider how my light is spent\n Ere half my days in this dark world and wide,\n And that one talent which is death to hide\n Lodg’d with me useless, though my soul more bent\n To serve therewith my Maker, and present\n My true account, lest he returning chide,\n “Doth God exact day-labour, light denied?”\n I fondly ask. But Patience, to prevent\n That murmur, soon replies: “God doth not need\n Either man’s work or his own gifts: who best\n Bear his mild yoke, they serve him best. His state\n Is kingly; thousands at his bidding speed\n And post o’er land and ocean without rest:\n They also serve who only stand and wait."
+  },
+  "4": {
+    "category": "funny",
+    "title": "Doggy Heaven",
+    "author": "Larry Huggins",
+    "text": "All doggies go to heaven (or so I've been told). \nThey run and play along the streets of Gold. \nWhy is heaven such a doggie-delight? \nWhy, because there's not a single cat in sight!"
+  },
+  "5": {
+    "category": "funny",
+    "title": "Horrendous Haiku",
+    "author": "E.Gutierrez",
+    "text": "Creating Haiku\nIs harder than it appears\nThis may take a while."
+  },
+  "6": {
+    "category": "funny",
+    "title": "The Man In The Jar",
+    "author": "Irwin Mercer",
+    "text": "I once knew a man who lived in a jar.\nFor a stranger sight you'd have to go far.\nI asked him once why he lived in a jar.\nHe grimaced and said, how bizarre you are.\n\nMy jar's so cozy, warm and bright,\nEven in the full moonlight.\nThe only drawback is, you see,\nGetting out quickly when I have to pee."
+  },
+  "7": {
+    "category": "funny",
+    "title": "Tinkle, Tinkle Little Car",
+    "author": "Cecilia L. Goodbody",
+    "text": "Tinkle, Tinkle little car\nHow I wonder what you are.\n\nLeaking oil every day\nHaving it your own way.\n\nGoing up hills real slow\nI don't want you any mo'.\n\nTinkle, Tinkle little car\nBoy, what a lemon you are."
+  },
+  "8": {
+    "category": "theworst",
+    "title": "Organic Girl",
+    "author": "Suzanne Somers",
+    "text": "Organic girl dropped by last night\nFor nothing in particular\nExcept to tell me again how beautiful and serene she feels\nOn uncooked vegetables and wheat germ fortified by bean sprouts\nMixed with yeast and egg whites on really big days\nShe not only meditates regularly, but looks at me like I should\nAnd lectures me about meat and ice cream\nAnd other aggressive foods I shouldn’t eat."
+  },
+  "9": {
+    "category": "theworst",
+    "title": "Unicorn love mascot",
+    "author": "Jennifer Aniston",
+    "text": "Lucky in love, lucky in love\nDidn’t forget me when I asked you to leave me\nDidn’t forget me\nNow you’re alongside me\nYou’ve brought luck to love\nI’ve been hit by a truck in love."
+  },
+  "10": {
+    "category": "theworst",
+    "title": "A Peace of My Mind ",
+    "author": "Charlie Sheen",
+    "text": "Teacher, teacher, I don’t understand\nYou tell me it’s like the back of my hand\nShould I play guitar and join the band?\nOr head to the beach and walk in the sand?"
+  },
+  "11": {
+    "category": "theworst",
+    "title": "Musings From the Bed of Pamela",
+    "author": "Pamela Anderson",
+    "text": "The youth… \nThe wild that rose up from the ashes. The adults… \nLiving and dead that fought for our rights… \nArtists… Sweet artists… \nHold on… \nCrazy, the world goes on… \nAnd goes…"
+  },
+  "12": {
+    "category": "erotic",
+    "title": "What Do Women Want?",
+    "author": "Kim Addonizio",
+    "text": "I want a red dress.\nI want it flimsy and cheap,\nI want it too tight, I want to wear it \nuntil someone tears it off me.\nI want it sleeveless and backless,\nthis dress, so no one has to guess\nwhat's underneath. I want to walk down\nthe street past Thrifty's and the hardware store \nwith all those keys glittering in the window, \npast Mr. and Mrs. Wong selling day-old \ndonuts in their café, past the Guerra brothers \nslinging pigs from the truck and onto the dolly, \nhoisting the slick snouts over their shoulders. \nI want to walk like I'm the only\nwoman on earth and I can have my pick. \nI want that red dress bad.\nI want it to confirm\nyour worst fears about me,\nto show you how little I care about you \nor anything except what\nI want. When I find it, I'll pull that garment \nfrom its hanger like I'm choosing a body \nto carry me into this world, through \nthe birth-cries and the love-cries too, \nand I'll wear it like bones, like skin, \nit'll be the goddamned\ndress they bury me in."
+  },
+  "13": {
+    "category": "erotic",
+    "title": "Servitude",
+    "author": "Anne Reeve Aldrich",
+    "text": "The church was dim at vespers.\nMy eyes were on the Rood.\nBut yet I felt thee near me,\nIn every drop of blood.\n\nIn helpless, trembling bondage\nMy soul's weight lies on thee,\nO call me not at dead of night,\nLest I should come to thee!"
+  },
+  "14": {
+    "category": "erotic",
+    "title": "O Hymen!",
+    "author": "Walt Whitman",
+    "text": "O HYMEN! O hymenee!\nWhy do you tantalize me thus?\nO why sting me for a swift moment only?\nWhy can you not continue? O why do you now cease?\nIs it because, if you continued beyond the swift moment, you would soon certainly kill me?"
+  },
+  "15": {
+    "category": "erotic",
+    "title": "Upon Julia's Clothes",
+    "author": "Robert Herrick",
+    "text": "Whenas in silks my Julia goes,\nThen, then, methinks, how sweetly flows\nThe liquefaction of her clothes.\n\nNext, when I cast mine eyes and see\nThat brave vibration each way free,\nOh, how that glittering taketh me!"
   }
 }

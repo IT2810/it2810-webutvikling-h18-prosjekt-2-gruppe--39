@@ -3,12 +3,6 @@ import './App.css';
 import Sidebar from './components/Sidebar/Sidebar';
 import Cards from './components/Card/Card';
 
-const testDict = {
-  title: 'test_title',
-  author: 'test_author',
-  text: 'test_text'
-};
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -17,7 +11,7 @@ class App extends Component {
     this.handleDataLoad = this.handleDataLoad.bind(this);
 
     this.state = {
-      isMenuOpen: false,
+      isMenuOpen: true,
       items: []
     };
   }
