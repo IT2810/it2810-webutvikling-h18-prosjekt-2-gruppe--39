@@ -1,14 +1,6 @@
 import React from 'react';
 import './Sidebar.css';
 
-/*
-TODO: Remove?
-const types = {
-  dikt: ['classice', 'funny', 'theworst', 'erotic'],
-  lyd: ['k1', 'k2', 'k3', 'k4'],
-  bilde: ['k1', 'k2', 'k3', 'k4']
-};*/
-
 function Checkbox(props) {
   return (
     <label>
