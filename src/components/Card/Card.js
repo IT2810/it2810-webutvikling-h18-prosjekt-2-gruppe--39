@@ -34,9 +34,20 @@ class Cards extends React.Component {
     return cards;
   }
 
+  renderAudio(audios) {
+    let audioArr = [];
+    audios.forEach((a, i) => {
+      audioArr.push(<audio src={a} controls key={i} />);
+    });
+    return audioArr;
+  }
+
   render() {
     return (
-      <div className="card-wrapper">{this.renderPoems(this.props.content)}</div>
+      <div>
+        <div className="card-wrapper">{this.renderPoems(this.props.poems)}</div>
+        <div>{this.renderAudio(this.props.audio)}</div>
+      </div>
     );
   }
 }

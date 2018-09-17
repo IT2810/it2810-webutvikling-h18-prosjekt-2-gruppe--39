@@ -8,11 +8,13 @@ class App extends Component {
     super(props);
 
     this.handleMenuToggle = this.handleMenuToggle.bind(this);
-    this.handleDataLoad = this.handleDataLoad.bind(this);
+    this.handlePoemLoad = this.handlePoemLoad.bind(this);
+    this.handleAudioLoad = this.handleAudioLoad.bind(this);
 
     this.state = {
       isMenuOpen: true,
-      items: []
+      items: [],
+      audio: []
     };
   }
 
@@ -29,7 +31,8 @@ class App extends Component {
           <div className="sidebar-wrapper">
             <Sidebar
               callback={this.handleMenuToggle}
-              loadData={this.handleDataLoad}
+              loadPoems={this.handlePoemLoad}
+              loadAudio={this.handleAudioLoad}
             />
           </div>
         ) : (
@@ -38,14 +41,22 @@ class App extends Component {
           </span>
         )}
         <div className="card-wrapper">
-          <Cards className="cards" content={this.state.items} />
+          <Cards
+            className="cards"
+            poems={this.state.items}
+            audio={this.state.audio}
+          />
         </div>
       </div>
     );
   }
 
-  handleDataLoad(data) {
+  handlePoemLoad(data) {
     this.setState({ items: data });
+  }
+
+  handleAudioLoad(data) {
+    this.setState({ audio: data });
   }
 
   handleMenuToggle() {

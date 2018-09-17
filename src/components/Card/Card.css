@@ -1,8 +1,9 @@
 .card {
   flex: 1 200px;
-  margin: 0.5rem;
   padding: 0.5rem;
   border: solid black 2px;
+  white-space: pre-line;
+  margin: 0.5rem 0.5rem;
 }
 
 .card-wrapper {

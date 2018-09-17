@@ -66,7 +66,12 @@ class Sidebar extends React.Component {
           </ul>
           <ul className="sidebar-element">
             Lyd
-            {this.renderCheckboxes('sound', ['c1', 'c2', 'c3', 'c4'])}
+            {this.renderCheckboxes('sound', [
+              'blues',
+              'classical',
+              'meme',
+              'noice'
+            ])}
           </ul>
           <ul className="sidebar-element">
             Bilde
@@ -83,13 +88,13 @@ class Sidebar extends React.Component {
     this.setState(newState);
     switch (type) {
       case 'poems':
-        this.fetchPoems();
+        this.fetchPoems(kat);
         break;
       case 'image':
         this.fetchPhotos();
         break;
       case 'sound':
-        this.fetchSound();
+        this.fetchSound(kat);
         break;
       default:
         console.log('Nothing here');
@@ -100,12 +105,20 @@ class Sidebar extends React.Component {
     // TODO: fetch photos
   }
 
-  fetchSound() {
-    // TODO: fetch sound
-    new Audio('media/Sound/blues/track_0.mp3').play();
+  fetchSound(kat) {
+    let audioURLs = [];
+    for (let i = 0; i < 4; i++) {
+      audioURLs.push(`media/Sound/${kat}/track_${i}.mp3`);
+    }
+    try {
+      this.props.loadAudio(audioURLs);
+      console.log(audioURLs);
+    } catch (e) {
+      console.error(e);
+    }
   }
 
-  fetchPoems() {
+  fetchPoems(kat) {
     const keys = [];
     for (let key in this.state.poems) {
       if (this.state.poems[key] === true) {
@@ -122,7 +135,7 @@ class Sidebar extends React.Component {
               newRes.push(res[key]);
             }
           }
-          this.props.loadData(newRes); // Calls props function from App.js
+          this.props.loadPoems(newRes); // Calls props function from App.js
         },
         error => {
           this.setState({
