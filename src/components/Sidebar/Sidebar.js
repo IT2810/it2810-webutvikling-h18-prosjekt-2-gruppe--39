@@ -1,11 +1,10 @@
-import React from "react";
-import Card from "../Card/Card";
-import "./Sidebar.css";
+import React from 'react';
+import './Sidebar.css';
 
 const types = {
-  dikt: ["klassikere", "funny", "theworst", "erotic"],
-  lyd: ["k1", "k2", "k3", "k4"],
-  bilde: ["k1", "k2", "k3", "k4"]
+  dikt: ['klassikere', 'funny', 'theworst', 'erotic'],
+  lyd: ['k1', 'k2', 'k3', 'k4'],
+  bilde: ['k1', 'k2', 'k3', 'k4']
 };
 
 function Checkbox(props) {
@@ -55,25 +54,25 @@ class Sidebar extends React.Component {
             <li>
               <Checkbox
                 kategori="Kategori 1"
-                onClick={() => this.handleCheckboxClick("dikt", "klassikere")}
+                onClick={() => this.handleCheckboxClick('dikt', 'klassikere')}
               />
             </li>
             <li>
               <Checkbox
                 kategori="Kategori 2"
-                onClick={() => this.handleCheckboxClick("dikt", "funny")}
+                onClick={() => this.handleCheckboxClick('dikt', 'funny')}
               />
             </li>
             <li>
               <Checkbox
                 kategori="Kategori 3"
-                onClick={() => this.handleCheckboxClick("dikt", "theworst")}
+                onClick={() => this.handleCheckboxClick('dikt', 'theworst')}
               />
             </li>
             <li>
               <Checkbox
                 kategori="Kategori 4"
-                onClick={() => this.handleCheckboxClick("dikt", "erotic")}
+                onClick={() => this.handleCheckboxClick('dikt', 'erotic')}
               />
             </li>
           </ul>
@@ -82,19 +81,19 @@ class Sidebar extends React.Component {
             <li>
               <Checkbox
                 kategori="Kategori 1"
-                onClick={() => this.handleCheckboxClick("lyd", "kategori_1")}
+                onClick={() => this.handleCheckboxClick('lyd', 'kategori_1')}
               />
             </li>
             <li>
               <Checkbox
                 kategori="Kategori 2"
-                onClick={() => this.handleCheckboxClick("lyd", "kategori_2")}
+                onClick={() => this.handleCheckboxClick('lyd', 'kategori_2')}
               />
             </li>
             <li>
               <Checkbox
                 kategori="Kategori 3"
-                onClick={() => this.handleCheckboxClick("lyd", "kategori_3")}
+                onClick={() => this.handleCheckboxClick('lyd', 'kategori_3')}
               />
             </li>
           </ul>
@@ -103,19 +102,19 @@ class Sidebar extends React.Component {
             <li>
               <Checkbox
                 kategori="Kategori 1"
-                onClick={() => this.handleCheckboxClick("bilde", "kategori_1")}
+                onClick={() => this.handleCheckboxClick('bilde', 'kategori_1')}
               />
             </li>
             <li>
               <Checkbox
                 kategori="Kategori 2"
-                onClick={() => this.handleCheckboxClick("bilde", "kategori_2")}
+                onClick={() => this.handleCheckboxClick('bilde', 'kategori_2')}
               />
             </li>
             <li>
               <Checkbox
                 kategori="Kategori 3"
-                onClick={() => this.handleCheckboxClick("bilde", "kategori_3")}
+                onClick={() => this.handleCheckboxClick('bilde', 'kategori_3')}
               />
             </li>
           </ul>
@@ -138,17 +137,17 @@ class Sidebar extends React.Component {
     newState[type][kat] = !this.state[type][kat];
     this.setState(newState);
     switch (type) {
-      case "dikt":
+      case 'dikt':
         this.fetchPoems();
         break;
-      case "bilde":
+      case 'bilde':
         this.fetchPhotos();
         break;
-      case "lyd":
+      case 'lyd':
         this.fetchSound();
         break;
       default:
-        console.log("Nothing here");
+        console.log('Nothing here');
     }
   }
 
@@ -173,19 +172,13 @@ class Sidebar extends React.Component {
         keys.push(key);
       }
     }
-    fetch("media/Poems.json")
+    fetch('media/Poems.json')
       .then(res => res.json())
       .then(
         res => {
           let newRes = {};
           keys.forEach(k => (newRes[k] = res[k]));
-          this.setState(
-            {
-              items: newRes,
-              isLoaded: true
-            },
-            () => this.renderPoems()
-          );
+          this.props.loadData(newRes); // Calls props function from App.js
         },
         error => {
           this.setState({
