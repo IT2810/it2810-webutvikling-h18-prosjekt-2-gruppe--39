@@ -5,7 +5,7 @@ function Checkbox(props) {
   return (
     <label>
       {props.category}
-      <input onClick={props.onClick} type="checkbox" />
+      <input onClick={props.onClick} type="radio" name={props.name} />
     </label>
   );
 }
@@ -23,12 +23,14 @@ class Sidebar extends React.Component {
       sound: {
         kategori_1: false,
         kategori_2: false,
-        kategori_3: false
+        kategori_3: false,
+        kategori_4: false
       },
       image: {
         kategori_1: false,
         kategori_2: false,
-        kategori_3: false
+        kategori_3: false,
+        kategori_4: false
       }
     };
   }
@@ -39,6 +41,7 @@ class Sidebar extends React.Component {
       checkboxes.push(
         <li key={i}>
           <Checkbox
+            name={type}
             category={categories[i]}
             onClick={() => this.handleCheckboxClick(type, categories[i])}
           />
@@ -58,24 +61,30 @@ class Sidebar extends React.Component {
           <ul className="sidebar-element">
             Dikt
             {this.renderCheckboxes('poems', [
-              'classic',
-              'funny',
-              'theworst',
-              'erotic'
+              'Classic',
+              'Funny',
+              'Theworst',
+              'Erotic'
             ])}
           </ul>
+
           <ul className="sidebar-element">
             Lyd
             {this.renderCheckboxes('sound', [
-              'blues',
-              'classical',
-              'meme',
-              'noice'
+              'Blues',
+              'Classic',
+              'Noice',
+              'Memes'
             ])}
           </ul>
           <ul className="sidebar-element">
             Bilde
-            {this.renderCheckboxes('image', ['c1', 'c2', 'c3', 'c4'])}
+            {this.renderCheckboxes('image', [
+              'Flags',
+              'Horror',
+              'Memes',
+              'StarWars'
+            ])}
           </ul>
         </div>
       </div>
@@ -84,8 +93,12 @@ class Sidebar extends React.Component {
 
   handleCheckboxClick(type, kat) {
     const newState = this.state;
+    for (let k in newState[type]) {
+      newState[type][k] = false;
+    }
     newState[type][kat] = !this.state[type][kat];
     this.setState(newState);
+
     switch (type) {
       case 'poems':
         this.fetchPoems(kat);
@@ -108,11 +121,10 @@ class Sidebar extends React.Component {
   fetchSound(kat) {
     let audioURLs = [];
     for (let i = 0; i < 4; i++) {
-      audioURLs.push(`media/Sound/${kat}/track_${i}.mp3`);
+      audioURLs.push(`media/Sound/${kat.toLowerCase()}/track_${i}.mp3`);
     }
     try {
       this.props.loadAudio(audioURLs);
-      console.log(audioURLs);
     } catch (e) {
       console.error(e);
     }

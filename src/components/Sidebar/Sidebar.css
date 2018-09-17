@@ -26,6 +26,10 @@
   font-size: 2rem;
 }
 
+.sidebar li {
+  font-size: 0.5rem;
+}
+
 .sidebar a:hover {
   color: #f1f1f1;
 }
