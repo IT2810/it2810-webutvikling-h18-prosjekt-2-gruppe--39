@@ -3,9 +3,6 @@ import './Card.css';
 
 class Card extends React.Component {
   // Todo: Make and use Card Class for use in Cards
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     return (
@@ -27,10 +24,6 @@ class Cards extends React.Component {
 * Container for multiple cards
 */
 
-  constructor(props) {
-    super(props);
-  }
-
   renderPoems(poems) {
     let cards = [];
     poems.forEach((p, i) => {
@@ -42,8 +35,9 @@ class Cards extends React.Component {
   }
 
   render() {
-    this.props.content.forEach(c => console.log(c));
-    return <div>{this.renderPoems(this.props.content)}</div>;
+    return (
+      <div className="card-wrapper">{this.renderPoems(this.props.content)}</div>
+    );
   }
 }
 
