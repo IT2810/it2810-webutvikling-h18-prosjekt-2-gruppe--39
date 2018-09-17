@@ -11,6 +11,7 @@ function Checkbox(props) {
 }
 
 class Sidebar extends React.Component {
+  // Sidebar class
   renderCheckboxes(type, categories) {
     let checkboxes = [];
     categories.forEach((c, i) => {
