@@ -1,14 +1,6 @@
 import React from 'react';
 import './Sidebar.css';
 
-/*
-TODO: Remove?
-const types = {
-  dikt: ['classice', 'funny', 'theworst', 'erotic'],
-  lyd: ['k1', 'k2', 'k3', 'k4'],
-  bilde: ['k1', 'k2', 'k3', 'k4']
-};*/
-
 function Checkbox(props) {
   return (
     <label>
@@ -29,9 +21,10 @@ class Sidebar extends React.Component {
         erotic: false
       },
       lyd: {
-        kategori_1: false,
-        kategori_2: false,
-        kategori_3: false
+        blues: false,
+        classical: false,
+        noice: false,
+        meme: false
       },
       bilde: {
         kategori_1: false,
@@ -82,20 +75,26 @@ class Sidebar extends React.Component {
             Lyd
             <li>
               <Checkbox
-                kategori="Kategori 1"
-                onClick={() => this.handleCheckboxClick('lyd', 'kategori_1')}
+                kategori="Blues"
+                onClick={() => this.handleCheckboxClick('lyd', 'blues')}
               />
             </li>
             <li>
               <Checkbox
-                kategori="Kategori 2"
-                onClick={() => this.handleCheckboxClick('lyd', 'kategori_2')}
+                kategori="Classical"
+                onClick={() => this.handleCheckboxClick('lyd', 'classical')}
               />
             </li>
             <li>
               <Checkbox
-                kategori="Kategori 3"
-                onClick={() => this.handleCheckboxClick('lyd', 'kategori_3')}
+                kategori="Noice"
+                onClick={() => this.handleCheckboxClick('lyd', 'noice')}
+              />
+            </li>
+            <li>
+              <Checkbox
+                kategori="Meme"
+                onClick={() => this.handleCheckboxClick('lyd', 'meme')}
               />
             </li>
           </ul>
