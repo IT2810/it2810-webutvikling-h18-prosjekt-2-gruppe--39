@@ -11,30 +11,6 @@ function Checkbox(props) {
 }
 
 class Sidebar extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      poems: {
-        classic: false,
-        funny: false,
-        theworst: false,
-        erotic: false
-      },
-      sound: {
-        kategori_1: false,
-        kategori_2: false,
-        kategori_3: false,
-        kategori_4: false
-      },
-      image: {
-        kategori_1: false,
-        kategori_2: false,
-        kategori_3: false,
-        kategori_4: false
-      }
-    };
-  }
-
   renderCheckboxes(type, categories) {
     let checkboxes = [];
     categories.forEach((c, i) => {
@@ -92,13 +68,6 @@ class Sidebar extends React.Component {
   }
 
   handleCheckboxClick(type, kat) {
-    const newState = this.state;
-    for (let k in newState[type]) {
-      newState[type][k] = false;
-    }
-    newState[type][kat] = !this.state[type][kat];
-    this.setState(newState);
-
     switch (type) {
       case 'poems':
         this.fetchPoems(kat);
@@ -131,19 +100,13 @@ class Sidebar extends React.Component {
   }
 
   fetchPoems(kat) {
-    const keys = [];
-    for (let key in this.state.poems) {
-      if (this.state.poems[key] === true) {
-        keys.push(key);
-      }
-    }
     fetch('media/Poems.json')
       .then(res => res.json())
       .then(
         res => {
           let newRes = [];
           for (const key in res) {
-            if (keys.indexOf(res[key]['category']) > -1) {
+            if (res[key]['category'] === kat) {
               newRes.push(res[key]);
             }
           }
