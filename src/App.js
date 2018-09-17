@@ -1,49 +1,57 @@
-import React, { Component } from "react";
-import "./App.css";
-import Sidebar from "./components/Sidebar/Sidebar";
-import Card from "./components/Card/Card";
+import React, { Component } from 'react';
+import './App.css';
+import Sidebar from './components/Sidebar/Sidebar';
+import Cards from './components/Card/Card';
 
-const openStyle = {
-  gridTemplateColumns: "250px auto 25px"
-};
-const closedStyle = {
-  gridTemplateColumns: "25px auto 25px"
+const testDict = {
+  title: 'test_title',
+  author: 'test_author',
+  text: 'test_text'
 };
 
 class App extends Component {
   constructor(props) {
     super(props);
+
     this.handleMenuToggle = this.handleMenuToggle.bind(this);
+    this.handleDataLoad = this.handleDataLoad.bind(this);
+
     this.state = {
-      isMenuOpen: false
+      isMenuOpen: false,
+      items: []
     };
   }
 
   render() {
     return (
-      <div className="container">
+      <div
+        className={
+          this.state.isMenuOpen
+            ? 'container-menu-open'
+            : 'container-menu-closed'
+        }
+      >
         {this.state.isMenuOpen ? (
-          <div className="sidebar-wrapper" style={openStyle}>
-            <Sidebar callback={this.handleMenuToggle} />
+          <div className="sidebar-wrapper">
+            <Sidebar
+              callback={this.handleMenuToggle}
+              loadData={this.handleDataLoad}
+            />
           </div>
         ) : (
-          <span
-            className="hamburger"
-            onClick={() => this.handleMenuToggle()}
-            style={closedStyle}
-          >
+          <span className="hamburger" onClick={() => this.handleMenuToggle()}>
             &#9776;
           </span>
         )}
         <div className="card-wrapper">
-          <Card className="card" />
-          <Card className="card" />
-          <Card className="card" />
-          <Card className="card" />
-          <Card className="card" />
+          <Cards className="cards" content={this.state.items} />
         </div>
       </div>
     );
+  }
+
+  handleDataLoad(data) {
+    this.setState({ items: data });
   }
 
   handleMenuToggle() {
