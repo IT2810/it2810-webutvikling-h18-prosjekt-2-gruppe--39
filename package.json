@@ -13,7 +13,6 @@
   "lint-staged": {
     "src/**/*.{js,jsx,json,css}": [
       "prettier --single-quote --write",
-      "pretty-quick --staged",
       "git add"
     ]
   },
