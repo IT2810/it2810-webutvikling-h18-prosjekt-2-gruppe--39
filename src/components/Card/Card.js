@@ -1,6 +1,13 @@
 import React from 'react';
 import './Card.css';
 
+// fully random by @BetonMAN
+const shuffleArray = arr =>
+  arr
+    .map(a => [Math.random(), a])
+    .sort((a, b) => a[0] - b[0])
+    .map(a => a[1]);
+
 class Card extends React.Component {
   // Todo: Make and use Card Class for use in Cards
 
@@ -26,6 +33,7 @@ class Cards extends React.Component {
 
   renderPoems(poems) {
     let cards = [];
+    poems = shuffleArray(poems);
     poems.forEach((p, i) => {
       cards.push(
         <Card category={p.category} title={p.title} text={p.text} key={i} />
@@ -36,6 +44,7 @@ class Cards extends React.Component {
 
   renderAudio(audios) {
     let audioArr = [];
+    audios = shuffleArray(audios);
     audios.forEach((a, i) => {
       audioArr.push(<audio src={a} controls key={i} />);
     });
