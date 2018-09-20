@@ -45,9 +45,9 @@ class Card extends React.Component {
       }
       if (a && i === 1) {
         console.log('is audio');
-        audioSource = a.srs;
-        audiokey = this.props.key;
-        audio = <audio srs={audioSource} controls key={audiokey} />;
+        audioSource = a;
+        audiokey = this.key;
+        audio = <audio src={audioSource} controls key={audiokey} />;
       }
       if (a && i === 2) {
         // TO DO: add logic for pictures
