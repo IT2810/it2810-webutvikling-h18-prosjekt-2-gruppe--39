@@ -1,6 +1,13 @@
 import React from 'react';
 import './Sidebar.css';
 
+const imgNames = {
+  Flags: ['caucasian', 'mozambique', 'redneck', 'sicilian'],
+  Horror: ['baby', 'dead-lady', 'lady', 'spooky-man'],
+  Memes: ['bear', 'class', 'silverman', 'yaoming'],
+  StarWars: ['bounty-hunter', 'darth-vader', 'death-star', 'light-saber']
+};
+
 function Checkbox(props) {
   return (
     <label>
@@ -74,7 +81,7 @@ class Sidebar extends React.Component {
         this.fetchPoems(kat);
         break;
       case 'image':
-        this.fetchPhotos();
+        this.fetchPhotos(kat);
         break;
       case 'sound':
         this.fetchSound(kat);
@@ -84,8 +91,22 @@ class Sidebar extends React.Component {
     }
   }
 
-  fetchPhotos() {
-    // TODO: fetch photos
+  fetchPhotos(kat) {
+    // const parser = new DOMParser(); DONT NEED FFS
+    let imgArr = [];
+    imgNames[kat].forEach(name => {
+      fetch(`media/images/${kat}/${name}.svg`)
+        // .then(res => console.log(res))
+        .then(res => res.text())
+        // .then(res => parser.parseFromString(res, 'image/svg+xml')) DONT NEED FFS
+        .then(
+          res => {
+            imgArr.push(res);
+            this.props.loadImages(imgArr);
+          },
+          err => this.setState({ err })
+        );
+    });
   }
 
   fetchSound(kat) {
@@ -113,12 +134,7 @@ class Sidebar extends React.Component {
           }
           this.props.loadPoems(newRes); // Calls props function from App.js
         },
-        error => {
-          this.setState({
-            isLoaded: true,
-            error
-          });
-        }
+        err => this.setState({ err })
       );
   }
 }

@@ -10,11 +10,13 @@ class App extends Component {
     this.handleMenuToggle = this.handleMenuToggle.bind(this);
     this.handlePoemLoad = this.handlePoemLoad.bind(this);
     this.handleAudioLoad = this.handleAudioLoad.bind(this);
+    this.handleImageLoad = this.handleImageLoad.bind(this);
 
     this.state = {
       isMenuOpen: true,
       items: [],
-      audio: []
+      audio: [],
+      images: []
     };
   }
 
@@ -33,6 +35,7 @@ class App extends Component {
               callback={this.handleMenuToggle}
               loadPoems={this.handlePoemLoad}
               loadAudio={this.handleAudioLoad}
+              loadImages={this.handleImageLoad}
             />
           </div>
         ) : (
@@ -45,10 +48,15 @@ class App extends Component {
             className="cards"
             poems={this.state.items}
             audio={this.state.audio}
+            images={this.state.images}
           />
         </div>
       </div>
     );
+  }
+
+  handleImageLoad(data) {
+    this.setState({ images: data });
   }
 
   handlePoemLoad(data) {
