@@ -12,7 +12,6 @@
 }
 
 .sidebar a {
-  padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
   color: #818181;
@@ -36,18 +35,18 @@
 
 .sidebar .btn-close {
   position: absolute;
-  top: 0;
+  top: 0.2rem;
   right: 25px;
   font-size: 36px;
-  margin-left: 50px;
   color: white;
   cursor: pointer;
   border: none;
+  left: 0.5rem;
 }
 
-.hamburger {
-  font-size: 30px;
-  cursor: pointer;
+.radio {
+  margin: 0.5rem;
+  vertical-align: middle;
 }
 
 label {

@@ -18,5 +18,9 @@ html {
   flex-flow: row wrap;
 }
 
-.sidebar-wrapper {
+.hamburger {
+  font-size: 2rem;
+  cursor: pointer;
+  margin: 0 0 0 0.5rem;
+  padding: 0;
 }

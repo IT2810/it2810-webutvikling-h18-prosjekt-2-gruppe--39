@@ -10,9 +10,14 @@ const imgNames = {
 
 function Checkbox(props) {
   return (
-    <label>
+    <label className="label">
+      <input
+        className="radio"
+        onClick={props.onClick}
+        type="radio"
+        name={props.name}
+      />
       {props.category}
-      <input onClick={props.onClick} type="radio" name={props.name} />
     </label>
   );
 }
