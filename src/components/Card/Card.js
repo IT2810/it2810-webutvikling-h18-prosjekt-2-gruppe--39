@@ -42,11 +42,24 @@ class Cards extends React.Component {
     return audioArr;
   }
 
+  renderImages(images) {
+    let arr = [];
+    images.forEach((svg, i) => {
+      console.log(svg);
+      arr.push(<div key={i} dangerouslySetInnerHTML={{ __html: svg }} />);
+      // arr.push(<object key={i} data={svg} type="image/svg+xml"/>)
+    });
+    // console.log(images);
+    // return <div dangerouslySetInnerHTML={{__html: images}} />;
+    return arr;
+  }
+
   render() {
     return (
       <div>
         <div className="card-wrapper">{this.renderPoems(this.props.poems)}</div>
         <div>{this.renderAudio(this.props.audio)}</div>
+        <div>{this.renderImages(this.props.images)}</div>
       </div>
     );
   }

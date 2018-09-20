@@ -74,7 +74,7 @@ class Sidebar extends React.Component {
         this.fetchPoems(kat);
         break;
       case 'image':
-        this.fetchPhotos();
+        this.fetchPhotos(kat);
         break;
       case 'sound':
         this.fetchSound(kat);
@@ -84,8 +84,39 @@ class Sidebar extends React.Component {
     }
   }
 
-  fetchPhotos() {
+  /*fetchPhotos(kat) {
     // TODO: fetch photos
+    let req = new XMLHttpRequest();
+    let img = new Image();
+
+    req.addEventListener('load', this.reqListener);
+    req.open('GET', 'public/media/images/flags/caucasian.svg', true);
+    req.send();
+    console.log(req.response);
+
+    img = req.response;
+    this.props.loadImages([img]);
+  }*/
+
+  fetchPhotos(kat) {
+    const parser = new DOMParser();
+    const s = new XMLSerializer();
+    fetch('media/images/flags/caucasian.svg')
+      .then(res => res.text())
+      // .then(res => console.log(res))
+      .then(res => parser.parseFromString(res, 'image/svg+xml'))
+      // .then(res => console.log(res))
+      // .then(res => s.serializeToString(res.xml))
+      // .then(res => console.log(res))
+      .then(
+        res => {
+          const arr = [];
+          arr.push(res);
+          arr.push(res);
+          this.props.loadImages(arr);
+        },
+        err => this.setState({ err })
+      );
   }
 
   fetchSound(kat) {
@@ -113,12 +144,7 @@ class Sidebar extends React.Component {
           }
           this.props.loadPoems(newRes); // Calls props function from App.js
         },
-        error => {
-          this.setState({
-            isLoaded: true,
-            error
-          });
-        }
+        err => this.setState({ err })
       );
   }
 }
