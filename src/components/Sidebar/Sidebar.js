@@ -1,6 +1,13 @@
 import React from 'react';
 import './Sidebar.css';
 
+const imgNames = {
+  Flags: ['caucasian', 'mozambique', 'redneck', 'sicilian'],
+  Horror: ['baby', 'dead-lady', 'lady', 'spooky-man'],
+  Memes: ['bear', 'class', 'silverman', 'yaoming'],
+  StarWars: ['bounty-hunter', 'darth-vader', 'death-star', 'light-saber']
+};
+
 function Checkbox(props) {
   return (
     <label>
@@ -84,39 +91,22 @@ class Sidebar extends React.Component {
     }
   }
 
-  /*fetchPhotos(kat) {
-    // TODO: fetch photos
-    let req = new XMLHttpRequest();
-    let img = new Image();
-
-    req.addEventListener('load', this.reqListener);
-    req.open('GET', 'public/media/images/flags/caucasian.svg', true);
-    req.send();
-    console.log(req.response);
-
-    img = req.response;
-    this.props.loadImages([img]);
-  }*/
-
   fetchPhotos(kat) {
-    const parser = new DOMParser();
-    const s = new XMLSerializer();
-    fetch('media/images/flags/caucasian.svg')
-      .then(res => res.text())
-      // .then(res => console.log(res))
-      .then(res => parser.parseFromString(res, 'image/svg+xml'))
-      // .then(res => console.log(res))
-      // .then(res => s.serializeToString(res.xml))
-      // .then(res => console.log(res))
-      .then(
-        res => {
-          const arr = [];
-          arr.push(res);
-          arr.push(res);
-          this.props.loadImages(arr);
-        },
-        err => this.setState({ err })
-      );
+    // const parser = new DOMParser(); DONT NEED FFS
+    let imgArr = [];
+    imgNames[kat].forEach(name => {
+      fetch(`media/images/${kat}/${name}.svg`)
+        // .then(res => console.log(res))
+        .then(res => res.text())
+        // .then(res => parser.parseFromString(res, 'image/svg+xml')) DONT NEED FFS
+        .then(
+          res => {
+            imgArr.push(res);
+            this.props.loadImages(imgArr);
+          },
+          err => this.setState({ err })
+        );
+    });
   }
 
   fetchSound(kat) {

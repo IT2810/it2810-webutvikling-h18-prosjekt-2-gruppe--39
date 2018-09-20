@@ -54,12 +54,8 @@ class Cards extends React.Component {
   renderImages(images) {
     let arr = [];
     images.forEach((svg, i) => {
-      console.log(svg);
       arr.push(<div key={i} dangerouslySetInnerHTML={{ __html: svg }} />);
-      // arr.push(<object key={i} data={svg} type="image/svg+xml"/>)
     });
-    // console.log(images);
-    // return <div dangerouslySetInnerHTML={{__html: images}} />;
     return arr;
   }
 
