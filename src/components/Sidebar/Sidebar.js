@@ -8,19 +8,35 @@ const imgNames = {
   StarWars: ['bounty-hunter', 'darth-vader', 'death-star', 'light-saber']
 };
 
-function Checkbox(props) {
-  return (
-    <label className="label">
-      <input
-        className="radio"
-        onClick={props.onClick}
-        type="radio"
-        name={props.name}
-      />
-      <span className="check" />
-      {props.category}
-    </label>
-  );
+class Checkbox extends React.Component {
+  isChecked() {
+    // returns true if supposed to be checked, false if not.
+    let keys = [];
+    for (let key in this.props.checked) {
+      keys.push(key);
+      if (this.props.name === key) {
+        if (this.props.category === this.props.checked[key]) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
+  render() {
+    return (
+      <label className="label">
+        <input
+          className="radio"
+          onClick={this.props.onClick}
+          type="radio"
+          name={this.props.name}
+        />
+        <span className={this.isChecked() ? 'ischecked' : 'check'} />
+        {this.props.category}
+      </label>
+    );
+  }
 }
 
 class Sidebar extends React.Component {
@@ -34,6 +50,7 @@ class Sidebar extends React.Component {
             name={type}
             category={categories[i]}
             onClick={() => this.handleCheckboxClick(type, categories[i])}
+            checked={this.props.getCheck()}
           />
         </li>
       );
@@ -93,6 +110,7 @@ class Sidebar extends React.Component {
       default:
         console.error('Something seems to have gone awefully wrong');
     }
+    this.props.handleCheck(type, kat);
   }
 
   fetchPhotos(kat) {

@@ -68,7 +68,17 @@
   filter: brightness(70%);
 }
 
-.radio:checked ~ .check {
+/*.radio:checked ~ .check {
+  background-color: #2196f3;
+}*/
+
+.ischecked {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
   background-color: #2196f3;
 }
 
@@ -82,11 +92,11 @@
   border-radius: 50%;
 }
 
-.check:after {
+/*.check:after {
   content: '';
   position: absolute;
   display: none;
-}
+}*/
 
 .radio-container .radio:checked ~ .check:after {
   display: block;

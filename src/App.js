@@ -11,12 +11,15 @@ class App extends Component {
     this.handlePoemLoad = this.handlePoemLoad.bind(this);
     this.handleAudioLoad = this.handleAudioLoad.bind(this);
     this.handleImageLoad = this.handleImageLoad.bind(this);
+    this.handleCheckboxes = this.handleCheckboxes.bind(this);
+    this.getCheckboxState = this.getCheckboxState.bind(this);
 
     this.state = {
       isMenuOpen: true,
       items: [],
       audio: [],
-      images: []
+      images: [],
+      checked: {}
     };
   }
 
@@ -43,6 +46,8 @@ class App extends Component {
             loadPoems={this.handlePoemLoad}
             loadAudio={this.handleAudioLoad}
             loadImages={this.handleImageLoad}
+            handleCheck={this.handleCheckboxes}
+            getCheck={this.getCheckboxState}
           />
         ) : (
           <span className="hamburger" onClick={() => this.handleMenuToggle()}>
@@ -67,6 +72,15 @@ class App extends Component {
 
   handleMenuToggle() {
     this.setState({ isMenuOpen: !this.state.isMenuOpen });
+  }
+
+  handleCheckboxes(type, kat) {
+    let newState = this.state.checked;
+    newState[type] = kat;
+    this.setState({ checked: newState });
+  }
+  getCheckboxState() {
+    return this.state.checked;
   }
 }
 
