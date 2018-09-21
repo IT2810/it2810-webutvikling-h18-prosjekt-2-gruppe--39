@@ -19,7 +19,11 @@ class App extends Component {
       items: [],
       audio: [],
       images: [],
-      checked: {}
+      checked: {
+        poems: 'Classic',
+        sound: 'Blues',
+        image: 'Flags'
+      }
     };
   }
 

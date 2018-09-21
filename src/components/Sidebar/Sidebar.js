@@ -28,7 +28,7 @@ class Checkbox extends React.Component {
       <label className="label">
         <input
           className="radio"
-          onClick={this.props.onClick}
+          onClick={this.isChecked() ? () => {} : this.props.onClick}
           type="radio"
           name={this.props.name}
         />
@@ -111,6 +111,12 @@ class Sidebar extends React.Component {
         console.error('Something seems to have gone awefully wrong');
     }
     this.props.handleCheck(type, kat);
+  }
+
+  componentDidMount() {
+    for (let key in this.props.getCheck()) {
+      this.handleCheckboxClick(key, this.props.getCheck()[key]);
+    }
   }
 
   fetchPhotos(kat) {
