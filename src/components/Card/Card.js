@@ -14,22 +14,20 @@ class Card extends React.Component {
   render() {
     let poem;
     let audio;
-    let picture;
-    console.log('før alle ting');
+    let image;
 
-    this.props.cardInfo.forEach((a, i) => {
+    this.props.cardInfo.forEach((info, i) => {
       let category;
       let title;
       let text;
       let audioSource;
       let audiokey;
+      let imageSvg;
 
-      console.log(a);
-      if (a && i === 0) {
-        console.log('is poems');
-        category = a.category;
-        title = a.title;
-        text = a.text;
+      if (info && i === 0) {
+        category = info.category;
+        title = info.title;
+        text = info.text;
         poem = (
           <div>
             <h3>{category}</h3>{' '}
@@ -43,23 +41,23 @@ class Card extends React.Component {
           </div>
         );
       }
-      if (a && i === 1) {
-        console.log('is audio');
-        audioSource = a;
+      if (info && i === 1) {
+        audioSource = info;
         audiokey = this.key;
         audio = <audio src={audioSource} controls key={audiokey} />;
       }
-      if (a && i === 2) {
-        // TO DO: add logic for pictures
+      if (info && i === 2) {
+        console.log(info);
+        imageSvg = info;
+        image = <div dangerouslySetInnerHTML={{ __html: imageSvg }}> </div>;
       }
-
-      // {statement ? (dette):(eller dette)}
     });
-    console.log('kek');
+
     return (
       <div className="card">
         <div>{poem}</div>
         <div>{audio}</div>
+        <div>{image}</div>
       </div>
     );
   }
@@ -70,34 +68,28 @@ class Cards extends React.Component {
 * Container for multiple cards
 */
 
-  doEverything(poems, audio /*pictures*/) {
-    let test = <div>kek</div>;
+  generateCards(poems, audio, images) {
     let cards = [];
     poems = shuffleArray(poems);
     audio = shuffleArray(audio);
-    /* pictures = shuffleArray(pictures); */
-    let numberOfChards = Math.max(poems.lenght, audio.lenght);
-    let preCards = [];
-    poems.forEach((a, i) => {
-      if (!preCards[i]) preCards[i] = [null, null, null];
-      preCards[i][0] = a;
-    });
-    audio.forEach((a, i) => {
-      if (!preCards[i]) preCards[i] = [null, null, null];
-      preCards[i][1] = a;
-    });
-    /*pictures.forEach((a, i) => {
-      preCards[i][2] = pictures[i];
-    }); */
+    images = shuffleArray(images);
 
-    preCards.forEach((a, i) => {
-      test = <div>oh no...</div>;
-      console.log('hei');
-      cards.push(
-        <Card cardInfo={a} key={i} />
-        //<Card category={a[0].category} title={a[0].title} text={a[0].text} key={i} src={a[1]} />
-      );
-      console.log(cards);
+    let preCards = [];
+    poems.forEach((poem, i) => {
+      if (!preCards[i]) preCards[i] = [null, null, null];
+      preCards[i][0] = poem;
+    });
+    audio.forEach((sound, i) => {
+      if (!preCards[i]) preCards[i] = [null, null, null];
+      preCards[i][1] = sound;
+    });
+    images.forEach((image, i) => {
+      if (!preCards[i]) preCards[i] = [null, null, null];
+      preCards[i][2] = image;
+    });
+
+    preCards.forEach((card, i) => {
+      cards.push(<Card cardInfo={card} key={i} />);
     });
     return cards;
   }
@@ -106,7 +98,11 @@ class Cards extends React.Component {
     return (
       <div>
         <div className="card-wrapper">
-          {this.doEverything(this.props.poems, this.props.audio)}
+          {this.generateCards(
+            this.props.poems,
+            this.props.audio,
+            this.props.images
+          )}
         </div>
       </div>
     );
