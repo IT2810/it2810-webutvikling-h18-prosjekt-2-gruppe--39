@@ -29,20 +29,6 @@ class App extends Component {
             : 'container-menu-closed'
         }
       >
-        {this.state.isMenuOpen ? (
-          <div className="sidebar-wrapper">
-            <Sidebar
-              callback={this.handleMenuToggle}
-              loadPoems={this.handlePoemLoad}
-              loadAudio={this.handleAudioLoad}
-              loadImages={this.handleImageLoad}
-            />
-          </div>
-        ) : (
-          <span className="hamburger" onClick={() => this.handleMenuToggle()}>
-            &#9776;
-          </span>
-        )}
         <div className="card-wrapper">
           <Cards
             className="cards"
@@ -51,6 +37,18 @@ class App extends Component {
             images={this.state.images}
           />
         </div>
+        {this.state.isMenuOpen ? (
+          <Sidebar
+            callback={this.handleMenuToggle}
+            loadPoems={this.handlePoemLoad}
+            loadAudio={this.handleAudioLoad}
+            loadImages={this.handleImageLoad}
+          />
+        ) : (
+          <span className="hamburger" onClick={() => this.handleMenuToggle()}>
+            &#9776;
+          </span>
+        )}
       </div>
     );
   }

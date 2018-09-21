@@ -1,10 +1,10 @@
 .sidebar {
   height: 100%;
-  width: 250px;
+  width: 16rem;
   position: fixed;
   z-index: 1;
   top: 0;
-  left: 0;
+  right: 0;
   background-color: #111;
   overflow-x: hidden;
   transition: 0.5s;
@@ -17,7 +17,7 @@
 
 .sidebar a {
   text-decoration: none;
-  font-size: 25px;
+  font-size: 1.6rem;
   color: #818181;
   display: block;
   transition: 0.3s;
@@ -43,13 +43,12 @@
 
 .sidebar .btn-close {
   position: absolute;
-  top: 0.2rem;
-  right: 25px;
+  top: 0.9rem;
+  right: 1.9rem;
   font-size: 36px;
   color: white;
   cursor: pointer;
   border: none;
-  left: 0.5rem;
 }
 
 .radio-container {

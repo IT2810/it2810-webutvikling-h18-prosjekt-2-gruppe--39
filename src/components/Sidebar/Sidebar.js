@@ -43,40 +43,38 @@ class Sidebar extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="sidebar" id="sidebar">
-          <a className="btn-close" onClick={this.props.callback}>
-            X
-          </a>
-          <ul className="sidebar-element">
-            <span>Dikt</span>
-            {this.renderCheckboxes('poems', [
-              'Classic',
-              'Funny',
-              'Theworst',
-              'Erotic'
-            ])}
-          </ul>
+      <div className="sidebar" id="sidebar">
+        <a className="btn-close" onClick={this.props.callback}>
+          X
+        </a>
+        <ul className="sidebar-element">
+          <span>Dikt</span>
+          {this.renderCheckboxes('poems', [
+            'Classic',
+            'Funny',
+            'Theworst',
+            'Erotic'
+          ])}
+        </ul>
 
-          <ul className="sidebar-element">
-            <span>Lyd</span>
-            {this.renderCheckboxes('sound', [
-              'Blues',
-              'Classic',
-              'Noice',
-              'Memes'
-            ])}
-          </ul>
-          <ul className="sidebar-element">
-            <span>Bilde</span>
-            {this.renderCheckboxes('image', [
-              'Flags',
-              'Horror',
-              'Memes',
-              'StarWars'
-            ])}
-          </ul>
-        </div>
+        <ul className="sidebar-element">
+          <span>Lyd</span>
+          {this.renderCheckboxes('sound', [
+            'Blues',
+            'Classic',
+            'Noice',
+            'Memes'
+          ])}
+        </ul>
+        <ul className="sidebar-element">
+          <span>Bilde</span>
+          {this.renderCheckboxes('image', [
+            'Flags',
+            'Horror',
+            'Memes',
+            'StarWars'
+          ])}
+        </ul>
       </div>
     );
   }
@@ -93,7 +91,7 @@ class Sidebar extends React.Component {
         this.fetchSound(kat);
         break;
       default:
-        console.log('Nothing here');
+        console.error('Something seems to have gone awefully wrong');
     }
   }
 

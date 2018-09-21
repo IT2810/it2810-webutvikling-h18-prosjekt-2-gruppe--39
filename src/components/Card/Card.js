@@ -42,7 +42,12 @@ class Card extends React.Component {
       if (info && i === 2) {
         console.log(info);
         imageSvg = info;
-        image = <div dangerouslySetInnerHTML={{ __html: imageSvg }} />;
+        image = (
+          <div
+            className="svg-container"
+            dangerouslySetInnerHTML={{ __html: imageSvg }}
+          />
+        );
       }
     });
 
