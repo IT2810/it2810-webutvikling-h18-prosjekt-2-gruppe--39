@@ -9,7 +9,6 @@
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
-
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -28,6 +27,10 @@
   color: white;
   list-style: none;
   font-size: 2rem;
+}
+
+.sidebar span {
+  text-decoration: underline;
 }
 
 .sidebar li {
@@ -49,56 +52,68 @@
   left: 0.5rem;
 }
 
-.radio {
-  vertical-align: middle;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  display: inline-block;
+.radio-container {
+  display: block;
   position: relative;
-  background-color: #f1f1f1;
-  color: #666;
-  top: 0.6rem;
-  height: 1.8rem;
-  width: 1.8rem;
-  border: 0;
-  border-radius: 50px;
+  padding-left: 35px;
+  /*margin-bottom: 12px;*/
+  margin: 0.8rem 0;
   cursor: pointer;
-  margin: 0.5rem 0.45rem 0.5rem 0.5rem;
-  outline: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-.radio:checked::before {
+.radio-container:hover .radio ~ .check {
+  filter: brightness(70%);
+}
+
+.radio:checked ~ .check {
+  background-color: #2196f3;
+}
+
+.check {
   position: absolute;
-  font: 13px/1 'Open Sans', sans-serif;
-  left: 11px;
-  top: 7px;
-  content: '\02143';
-  transform: rotate(40deg);
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
 }
-.radio:hover {
-  background-color: #f7f7f7;
+
+.check:after {
+  content: '';
+  position: absolute;
+  display: none;
 }
-.radio:checked {
-  background-color: #f1f1f1;
+
+.radio-container .radio:checked ~ .check:after {
+  display: block;
+}
+
+.radio-container .check:after {
+  width: 0; /*Hide dot in radio button*/
+  border-radius: 50%;
+  background: white;
+}
+
+.radio {
+  position: absolute;
+  opacity: 0;
 }
 
 .label {
-  font: 300 16px/1.7 'Open Sans', sans-serif;
   cursor: pointer;
-}
-
-input[type='radio'],
-label {
-  vertical-align: bottom;
-  /* padding: 10px; */
-  /* margin: 10px; */
+  font: 300 1.2rem 'Open Sans', sans-serif;
 }
 
 @media screen and (max-height: 450px) {
   .sidenav {
     padding-top: 15px;
   }
+
   .sidenav a {
     font-size: 18px;
   }

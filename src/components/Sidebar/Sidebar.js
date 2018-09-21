@@ -17,6 +17,7 @@ function Checkbox(props) {
         type="radio"
         name={props.name}
       />
+      <span className="check" />
       {props.category}
     </label>
   );
@@ -28,7 +29,7 @@ class Sidebar extends React.Component {
     let checkboxes = [];
     categories.forEach((c, i) => {
       checkboxes.push(
-        <li key={i}>
+        <li key={i} className="radio-container">
           <Checkbox
             name={type}
             category={categories[i]}
@@ -48,7 +49,7 @@ class Sidebar extends React.Component {
             X
           </a>
           <ul className="sidebar-element">
-            Dikt
+            <span>Dikt</span>
             {this.renderCheckboxes('poems', [
               'Classic',
               'Funny',
@@ -58,7 +59,7 @@ class Sidebar extends React.Component {
           </ul>
 
           <ul className="sidebar-element">
-            Lyd
+            <span>Lyd</span>
             {this.renderCheckboxes('sound', [
               'Blues',
               'Classic',
@@ -67,7 +68,7 @@ class Sidebar extends React.Component {
             ])}
           </ul>
           <ul className="sidebar-element">
-            Bilde
+            <span>Bilde</span>
             {this.renderCheckboxes('image', [
               'Flags',
               'Horror',
