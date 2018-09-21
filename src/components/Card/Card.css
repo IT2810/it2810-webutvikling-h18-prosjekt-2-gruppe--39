@@ -5,7 +5,11 @@
   white-space: pre-line;
   margin: 0.5rem 0.5rem;
   max-width: 30rem;
-  min-width: 15rem;
+  cursor: pointer;
+}
+
+.card:hover {
+  background-color: #2196f3;
 }
 
 .card-wrapper {

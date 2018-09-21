@@ -1,5 +1,6 @@
 import React from 'react';
 import './Card.css';
+import Modal from '../Modal/Modal';
 
 // fully random by @BetonMAN
 const shuffleArray = arr =>
@@ -11,12 +12,25 @@ const shuffleArray = arr =>
 class Card extends React.Component {
   // Todo: Make and use Card Class for use in Cards
 
+  constructor(props) {
+    super(props);
+
+    this.onCardPress = this.onCardPress.bind(this);
+
+    this.state = {
+      expand: false
+    };
+  }
+
+  onCardPress() {
+    this.setState({ expand: !this.state.expand });
+  }
+
   render() {
     let poem, audio, image;
 
+    let category, title, text, audioSource, audiokey, imageSvg;
     this.props.cardInfo.forEach((info, i) => {
-      let category, title, text, audioSource, audiokey, imageSvg;
-
       if (info && i === 0) {
         category = info.category;
         title = info.title;
@@ -51,13 +65,30 @@ class Card extends React.Component {
     });
 
     return (
-      <div className="card">
-        <div>{poem}</div>
-        <div>{audio}</div>
-        <div>{image}</div>
+      <div>
+        {this.state.expand ? (
+          <div>
+            <Modal
+              audio={audio}
+              poem={poem}
+              image={image}
+              callback={this.onCardPress}
+            />
+          </div>
+        ) : (
+          <div className="card" onClick={this.onCardPress}>
+            <div>{title}</div>
+          </div>
+        )}
       </div>
     );
   }
+}
+
+{
+  /*<div>{poem}</div>
+<div>{audio}</div>
+<div>{image}</div>*/
 }
 
 class Cards extends React.Component {
