@@ -12,17 +12,10 @@ class Card extends React.Component {
   // Todo: Make and use Card Class for use in Cards
 
   render() {
-    let poem;
-    let audio;
-    let image;
+    let poem, audio, image;
 
     this.props.cardInfo.forEach((info, i) => {
-      let category;
-      let title;
-      let text;
-      let audioSource;
-      let audiokey;
-      let imageSvg;
+      let category, title, text, audioSource, audiokey, imageSvg;
 
       if (info && i === 0) {
         category = info.category;
@@ -49,7 +42,7 @@ class Card extends React.Component {
       if (info && i === 2) {
         console.log(info);
         imageSvg = info;
-        image = <div dangerouslySetInnerHTML={{ __html: imageSvg }}> </div>;
+        image = <div dangerouslySetInnerHTML={{ __html: imageSvg }} />;
       }
     });
 

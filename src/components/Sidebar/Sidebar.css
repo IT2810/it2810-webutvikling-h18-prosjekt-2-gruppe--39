@@ -9,6 +9,11 @@
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .sidebar a {
@@ -45,7 +50,6 @@
 }
 
 .radio {
-  margin: 0.5rem;
   vertical-align: middle;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -54,13 +58,13 @@
   position: relative;
   background-color: #f1f1f1;
   color: #666;
-  top: 10px;
-  height: 30px;
-  width: 30px;
+  top: 0.6rem;
+  height: 1.8rem;
+  width: 1.8rem;
   border: 0;
   border-radius: 50px;
   cursor: pointer;
-  margin-right: 7px;
+  margin: 0.5rem 0.45rem 0.5rem 0.5rem;
   outline: none;
 }
 
@@ -80,7 +84,6 @@
 }
 
 .label {
-  font-size: 1rem;
   font: 300 16px/1.7 'Open Sans', sans-serif;
   cursor: pointer;
 }

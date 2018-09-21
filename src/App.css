@@ -16,6 +16,7 @@ html {
   flex: 1;
   display: flex;
   flex-flow: row wrap;
+  margin-left: 0.5rem;
 }
 
 .hamburger {
