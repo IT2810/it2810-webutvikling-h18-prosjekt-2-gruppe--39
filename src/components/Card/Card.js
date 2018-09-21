@@ -74,6 +74,9 @@ class Card extends React.Component {
               image={image}
               callback={this.onCardPress}
             />
+            <div className="card chosen" onClick={this.onCardPress}>
+              <div>{title}</div>
+            </div>
           </div>
         ) : (
           <div className="card" onClick={this.onCardPress}>

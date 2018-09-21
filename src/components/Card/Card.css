@@ -12,6 +12,10 @@
   background-color: #2196f3;
 }
 
+.chosen {
+  background-color: #2196f3;
+}
+
 .card-wrapper {
   flex: 1;
   display: flex;
