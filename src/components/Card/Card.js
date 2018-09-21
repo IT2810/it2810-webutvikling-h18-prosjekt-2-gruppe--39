@@ -40,7 +40,6 @@ class Card extends React.Component {
         audio = <audio src={audioSource} controls key={audiokey} />;
       }
       if (info && i === 2) {
-        console.log(info);
         imageSvg = info;
         image = (
           <div
