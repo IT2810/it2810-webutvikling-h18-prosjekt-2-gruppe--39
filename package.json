@@ -1,5 +1,6 @@
 {
   "name": "it2810-webutvikling-h18-prosjekt-2-gruppe--39",
+  "homepage" : "http://it2810-39.idi.ntnu.no/prosjekt2",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
